@@ -1,0 +1,24 @@
+{
+  "persons": [
+    {
+      "firstName": "Оля",
+      "lastName": "Олькина",
+      "id": 2
+    },
+    {
+      "firstName": "Алексей",
+      "lastName": "Алешкин",
+      "id": 3
+    },
+    {
+      "firstName": "Саша",
+      "lastName": "Сашкин",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "firstName": "Юля",
+      "lastName": "Юлькина"
+    }
+  ]
+}
