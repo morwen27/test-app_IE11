@@ -9,14 +9,16 @@ module.exports = {
           ],
           createDefaultProgram: true
         },
-        extends: ["plugin:@angular-eslint/recommended"],
+        extends: [
+          "plugin:@angular-eslint/recommended",
+          "prettier",
+        ],
         rules: {}
       },
       {
         files: ["*.component.html"],
         extends: [
-            "plugin:@angular-eslint/template/recommended",
-            "prettier/prettier",
+            "plugin:@angular-eslint/template/recommended"
             ],
         rules: {
           "max-len": ["error", { "code": 140 }]
