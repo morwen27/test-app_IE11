@@ -1,0 +1,35 @@
+<div class="modal">
+    <h2 class="modal__title">{{ options.modal }}</h2>
+    <div class="modal__container">
+        <form [formGroup]="personForm">
+            <label for="firstName">
+                <span class="label__title">Имя</span>
+                <input 
+                    type="text" 
+                    formControlName="firstName" 
+                    id="firstName" 
+                    #firstInput>
+            </label>
+            <label for="lastName">
+                <span class="label__title">Фамилия</span>
+                <input 
+                    type="text" 
+                    formControlName="lastName" 
+                    id="lastName">
+            </label>
+        </form>
+    </div>
+    <button 
+        type="submit" 
+        [disabled]="personForm.invalid" 
+        class="button button_title button_modal" 
+        (click)="onSubmit(personForm.value)"
+    >{{ options.button }}
+    </button>
+    <button 
+        type="button" 
+        class="button button_title button_modal" 
+        (click)="closeEvent.emit()"
+    >Закрыть
+    </button>
+</div>
