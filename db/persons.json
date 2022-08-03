@@ -7,18 +7,13 @@
     },
     {
       "id": 3,
-      "firstName": "Алексей!",
+      "firstName": "Алексей",
       "lastName": "Алешкин"
     },
     {
-      "firstName": "Саша",
-      "lastName": "Сашкин",
-      "id": 4
-    },
-    {
-      "id": 5,
-      "firstName": "Юля",
-      "lastName": "Юлькина"
+      "id": 4,
+      "firstName": "Лена",
+      "lastName": "Кукушкина"
     }
   ]
 }
