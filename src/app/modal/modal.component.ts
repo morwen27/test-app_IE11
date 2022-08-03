@@ -34,11 +34,11 @@ export class ModalComponent implements OnInit, AfterViewInit {
   isAddType!: boolean;
 
   @HostListener('document:keydown.escape')
-  onEscHandler() {
+  onEscHandler(): void {
     this.closeEvent.emit();
   }
 
-  onSubmit(formValues: Person) {
+  onSubmit(formValues: Person): void {
     this.clickEvent.emit({
       id: this.options.person?.id,
       ...formValues,
@@ -52,7 +52,7 @@ export class ModalComponent implements OnInit, AfterViewInit {
     this.firstInput.nativeElement.focus();
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.personForm = new FormGroup({
       firstName: new FormControl(
         this.options.person ? this.options.person.firstName : '',
@@ -67,7 +67,7 @@ export class ModalComponent implements OnInit, AfterViewInit {
     this.isAddType = this.options.type === ModalType.add;
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     if (this.options.type !== ModalType.remove) {
       this.firstInput.nativeElement.focus();
     }

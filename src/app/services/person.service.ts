@@ -27,7 +27,7 @@ export class PersonService {
   }
 
   editPerson(person: Person): Observable<Person> {
-    return this.http.put<Person>(`${this.personsUrl}/${person.id}`, person, this.httpOptions).pipe(
+    return this.http.put<Person>(`${this.personsUrl}/${String(person.id)}`, person, this.httpOptions).pipe(
       tap(() => this.notificationsService.handleSuccess(ResponseStatus[200])),
       catchError(this.notificationsService.handleError<Person>({})),
     );
@@ -41,7 +41,7 @@ export class PersonService {
   }
 
   removePerson(person: Person): Observable<Person> {
-    return this.http.delete<Person>(`${this.personsUrl}/${person.id}`, this.httpOptions).pipe(
+    return this.http.delete<Person>(`${this.personsUrl}/${String(person.id)}`, this.httpOptions).pipe(
       tap(() => this.notificationsService.handleSuccess(ResponseStatus[200])),
       catchError(this.notificationsService.handleError<Person>({})),
     );

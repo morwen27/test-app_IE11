@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { ComponentFactoryResolver, Injectable } from '@angular/core';
 import { Observable, of, timer } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -9,12 +10,12 @@ const LIFE_TIME_NOTIFICATION = 5000;
 
 @Injectable()
 export class NotificationsService {
-  handleSuccess<T>(message: string) {
+  handleSuccess(message: string): void {
     this.showNotification(message, ResponseSelectors[1]);
   }
 
   handleError<T>(result?: T) {
-    return (error: any): Observable<T> => {
+    return (error: HttpErrorResponse): Observable<T> => {
       this.showNotification(ResponseStatus[error.status], ResponseSelectors[2]);
       return of(result as T);
     };
@@ -25,7 +26,7 @@ export class NotificationsService {
     private readonly resolver: ComponentFactoryResolver,
   ) {}
 
-  showNotification(message: string, selector: string) {
+  showNotification(message: string, selector: string): void {
     this.notificationDirective.containerRef.clear();
 
     const notificationFactory = this.resolver.resolveComponentFactory(NotificationComponent);

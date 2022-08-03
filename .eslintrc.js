@@ -12,8 +12,16 @@ module.exports = {
         extends: [
           "plugin:@angular-eslint/recommended",
           "prettier",
+          "plugin:@angular-eslint/template/process-inline-templates",
+          "eslint:recommended",
+          "plugin:@typescript-eslint/recommended",
+          "plugin:@typescript-eslint/recommended-requiring-type-checking"
         ],
-        rules: {}
+        rules: {
+          "@typescript-eslint/unbound-method": "off", 
+          "@typescript-eslint/no-unsafe-call": "off",
+          "@typescript-eslint/no-unsafe-member-access": "off"
+        }
       },
       {
         files: ["*.component.html"],

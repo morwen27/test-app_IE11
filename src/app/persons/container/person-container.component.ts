@@ -44,7 +44,7 @@ export class PersonContainerComponent implements OnInit, OnDestroy {
     });
   }
 
-  editPerson(person: Person) {
+  editPerson(person: Person): void {
     const modal = this.modalService.openModal(ModalType.edit, person);
 
     modal.clickEvent.subscribe((person: Person) => {
@@ -58,7 +58,7 @@ export class PersonContainerComponent implements OnInit, OnDestroy {
     });
   }
 
-  removePerson(person: Person) {
+  removePerson(person: Person): void {
     const modal = this.modalService.openModal(ModalType.remove, person);
 
     modal.clickEvent.subscribe(() => {

@@ -9,14 +9,14 @@ import { Person } from '../../models/person';
 export class PersonComponent {
   @Input() persons: Person[] = [];
 
-  @Output() editingPerson: EventEmitter<Person> = new EventEmitter();
-  @Output() removingPerson: EventEmitter<Person> = new EventEmitter();
+  @Output() editingPerson: EventEmitter<any> = new EventEmitter();
+  @Output() removingPerson: EventEmitter<any> = new EventEmitter();
 
-  editPerson(person: Person) {
+  editPerson(person: Person): void {
     this.editingPerson.emit(person);
   }
 
-  removePerson(person: Person) {
+  removePerson(person: Person): void {
     this.removingPerson.emit(person);
   }
 }
