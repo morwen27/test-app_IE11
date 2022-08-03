@@ -17,5 +17,6 @@ export class NotificationComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.destroyed$.next;
+    this.destroyed$.complete();
   }
 }

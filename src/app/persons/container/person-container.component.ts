@@ -64,11 +64,13 @@ export class PersonContainerComponent implements OnInit, OnDestroy {
     modal.clickEvent.subscribe(() => {
       this.personService
         .removePerson(person)
+        .pipe(takeUntil(this.destroyed$))
         .subscribe(() => (this.persons = this.persons.filter((item) => item !== person)));
     });
   }
 
   ngOnDestroy(): void {
     this.destroyed$.next;
+    this.destroyed$.complete();
   }
 }
