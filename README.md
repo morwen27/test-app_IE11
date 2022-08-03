@@ -6,8 +6,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Чтобы запустить приложение, скачайте архив, откройте в VSCode и в терминале запустите две команды
 
-<npx json-server db.json --routes routes.json>
-
+npx json-server db.json --routes routes.json
 и
-
-<npm run start>
+npm run start
